@@ -126,7 +126,7 @@ Daily Report OVP : https://mydocs.msc.com/:x:/g/personal/lilian_anjos_msc_com/Ef
     </form>
     <div style="">
       <h2 style="color: aliceblue;">Anotações</h2>
-      <ul id="lista-textos" style="background-color: aliceblue; color: black; text-align: center; font-size: 30px;"></ul>
+      <ul id="lista-textos" style="background-color: aliceblue; color: black;font-size: 30px;"></ul>
     </div>
     <script>
       const form = document.querySelector('form');
@@ -148,6 +148,28 @@ Daily Report OVP : https://mydocs.msc.com/:x:/g/personal/lilian_anjos_msc_com/Ef
           listaTextos.appendChild(li);
         }
       }
+  function exibirTextos() {
+    listaTextos.innerHTML = '';
+    for (let i = 0; i < textosDigitados.length; i++) {
+      const li = document.createElement('li');
+      li.style.display = 'flex';
+      li.style.justifyContent = 'space-between';
+      li.style.alignItems = 'center'; // adicionado
+      li.style.textAlign = 'center'; // adicionado
+      li.textContent = textosDigitados[i];
+      const botaoExcluir = document.createElement('span');
+      botaoExcluir.textContent = 'X';
+      botaoExcluir.style.cursor = 'pointer';
+      botaoExcluir.style.color = 'red';
+      botaoExcluir.style.marginLeft = 'auto';
+      botaoExcluir.addEventListener('click', function () {
+        textosDigitados.splice(i, 1);
+        exibirTextos();
+      });
+      li.appendChild(botaoExcluir);
+      listaTextos.appendChild(li);
+    }
+  }
     </script>
       <!--ASIDE É PARA COLOCAR O CONTEUDO NA LATERAL DIREITA-->
       <aside class="menu-lateral">
@@ -175,3 +197,4 @@ Daily Report OVP : https://mydocs.msc.com/:x:/g/personal/lilian_anjos_msc_com/Ef
     <script src="./src/js/index.js"></script>
   </body>
 </html>
+
