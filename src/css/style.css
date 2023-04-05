@@ -1,0 +1,139 @@
+body{
+    font-family: 'Poppins', sans-serif;
+    max-width: 1280px;
+    margin: 0 auto;
+}
+main::after{
+    content: '';
+    min-height: 100vh;
+    width: 100vw;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: linear-gradient(90deg, rgb(0, 0, 0) 0%, rgba(226, 226, 233, 0.106) 49%, rgb(16, 16, 16) 100%);
+    z-index: -1;
+}
+.conteudo{
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    justify-content: space-evenly;
+    margin-left: -5%;
+
+}
+.informacoes .logo{
+    max-width: 180px;
+    filter: invert(1);
+    margin-bottom: 100px;
+    
+}
+.informacoes .descricao{
+    width: 65%;
+    font-size: 24px;
+    color: #faf3f3;
+    line-height: 30px;
+}
+
+.botoes-carrossel{
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+.botoes-carrossel .botao{
+    background-color: #ffffff;
+    width: 15px;
+    height: 15px;
+    border-radius: 60%;  
+    border: 2px solid transparent;
+    cursor: pointer;
+    border-color: #ffffff;
+    
+}
+.botoes-carrossel .botao.selecionado{
+    background-color: #0026ff;
+}
+.menu-lateral {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 180px;
+  height: 100%;
+  margin-top: 10px;
+}
+.lateral {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  margin-right: 10px;
+}
+.lateral li {
+  margin-bottom: 10px;
+    display: block;
+  width: 100%;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  font-weight: bold;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  background-color: #fefefd;
+  color: #090909;
+}
+
+.lateral li:hover{
+    background-color: #020202;
+    color: #fcfcfa;
+}
+.carrossel{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: -1;
+}
+.carrossel .imagem{
+    width: 100%;
+    height: 100vh;
+    object-fit: cover;
+    display:none;
+    animation: mudarImagem 0.7s;
+}
+.carrossel .imagem.ativa{
+    display: block;
+}
+.listalink{
+list-style: none;
+padding: 0;
+margin-left: -15%;
+
+}
+.listalink li{
+  margin-top: 10px;
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #f5f6f2;
+  color: rgb(12, 12, 12);
+  font-size: 16px;
+  font-weight: bold;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+.listalink li:hover {
+  background-color: #020202;
+  color: #f1f1ef; ;
+}
+
+@keyframes mudarImagem{
+    from{
+    opacity: 0.85;
+    }
+    to{
+    opacity: 1;
+    }
+}
